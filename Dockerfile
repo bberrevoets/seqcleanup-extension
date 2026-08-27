@@ -1,0 +1,30 @@
+FROM --platform=$BUILDPLATFORM node:24-alpine AS client-builder
+WORKDIR /ui
+# cache packages in layer
+COPY ui/package.json /ui/package.json
+COPY ui/package-lock.json /ui/package-lock.json
+RUN --mount=type=cache,target=/usr/src/app/.npm \
+    npm set cache /usr/src/app/.npm && \
+    npm ci
+# install
+COPY ui /ui
+RUN npm run build
+
+FROM scratch
+# TODO: submit to the Docker Extensions Marketplace (https://www.docker.com/products/extensions/submissions/)
+#   when ready; keep docs/screenshot.png and the hosted label URLs below in sync when the UI changes.
+LABEL org.opencontainers.image.title="Seq Cleanup" \
+    org.opencontainers.image.description="Finds your Seq containers and, with one click, stops them, removes the Stream directory from their data volume, and restarts them." \
+    org.opencontainers.image.vendor="Berrevoets Systems" \
+    com.docker.desktop.extension.api.version="0.4.2" \
+    com.docker.extension.screenshots="[{\"alt\":\"Seq Cleanup in Docker Desktop\",\"url\":\"https://raw.githubusercontent.com/bberrevoets/seqcleanup-extension/main/docs/screenshot.png\"}]" \
+    com.docker.desktop.extension.icon="https://raw.githubusercontent.com/bberrevoets/seqcleanup-extension/main/docker.svg" \
+    com.docker.extension.detailed-description="<h1>Seq Cleanup</h1><p>One button to wipe your local Seq instance clean.</p><h2>What it does</h2><ul><li>Finds the containers using the <code>seq-data</code> volume.</li><li>Stops the ones that are running.</li><li>Deletes the <code>Stream</code> directory (all logged events) from the volume.</li><li>Restarts the containers it stopped.</li></ul><p>A confirmation dialog guards against accidental clicks, and a progress log shows each step.</p>" \
+    com.docker.extension.publisher-url="https://github.com/bberrevoets/seqcleanup-extension" \
+    com.docker.extension.additional-urls="[{\"title\":\"Source code\",\"url\":\"https://github.com/bberrevoets/seqcleanup-extension\"},{\"title\":\"Issue tracker\",\"url\":\"https://github.com/bberrevoets/seqcleanup-extension/issues\"}]" \
+    com.docker.extension.categories="volumes,utility-tools" \
+    com.docker.extension.changelog="<ul><li>One-click cleanup: discovers Seq containers, stops the ones using the selected data volume, removes the <code>Stream</code> directory, and restarts them.</li><li>Instance picker when several Seq containers are found; bind-mounted data directories supported.</li><li>Confirmation dialog before deletion and a step-by-step progress log.</li><li>Custom extension icon.</li></ul>"
+
+COPY metadata.json .
+COPY docker.svg .
+COPY --from=client-builder /ui/build ui
