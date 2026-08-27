@@ -1,0 +1,69 @@
+metadata.json
+  s_2d3e5c14c6c4cc::t_5635b437265e2a 5-10
+  s_2d3e5c14c6c4cc::t_35d6cb1884db84 1-4
+ui/src/App.tsx
+  s_2d3e5c14c6c4cc::t_0caefff479c1c8 3-11,15-17,24-33,35-36,38,41,43-47,50,54-58,62-66,71,161-167,171,173-176,178-186,189-202,204-211,218-220,226-229,232,237-249,261,304-307,315-318,321
+  s_2d3e5c14c6c4cc::t_1967885f7074ab 12-14,19-23,34,37,39-40,49,51-53,59-61,72-160,168-170,172,177,187-188,203,212-214,221-224,230-231,233-235,250-260,262-303,308-314
+  s_2d3e5c14c6c4cc::t_36f14be22015c4 67-70
+  s_2d3e5c14c6c4cc::t_fdd83c2219084d 1-2
+  s_2d3e5c14c6c4cc::t_0a64b5f5cab1c3 18
+  s_2d3e5c14c6c4cc::t_6b79ed8b096706 42
+  s_2d3e5c14c6c4cc::t_f13af707fb9c9a 48
+  s_2d3e5c14c6c4cc::t_94f84353e01968 215-217
+  s_2d3e5c14c6c4cc::t_38b630e0d371ce 225
+  s_2d3e5c14c6c4cc::t_f57bda1fae9e02 236
+  s_2d3e5c14c6c4cc::t_1a127fa39c3e20 319-320
+README.md
+  s_2d3e5c14c6c4cc::t_3a42df98ebf0d2 1-3,77
+  s_2d3e5c14c6c4cc::t_c73eda52ef7d6d 4-76,78-98
+CHANGELOG.md
+  s_2d3e5c14c6c4cc::t_3a42df98ebf0d2 1-17,26-44
+  s_2d3e5c14c6c4cc::t_bdafd94e2dbd27 18-25
+Dockerfile
+  s_2d3e5c14c6c4cc::t_5635b437265e2a 13-16
+  s_2d3e5c14c6c4cc::t_3942a2dc79cb81 1-12,17-30
+Makefile
+  s_2d3e5c14c6c4cc::t_428b06ee6251b3 1-28
+docker.svg
+  s_2d3e5c14c6c4cc::t_5063142dbca9ef 1-30
+ui/package.json
+  s_2d3e5c14c6c4cc::t_1f64e36b180a16 1-31
+.dockerignore
+  s_2d3e5c14c6c4cc::t_88a09bf5598145 1
+.gitignore
+  s_2d3e5c14c6c4cc::t_2ee65192c9a83e 1-2
+ui/.browserslistrc
+  s_2d3e5c14c6c4cc::t_fbfff98fcb740e 1
+ui/.env
+  s_2d3e5c14c6c4cc::t_adf6a074b01907 1
+ui/index.html
+  s_2d3e5c14c6c4cc::t_97febeed35db6e 1-12
+ui/package-lock.json
+  s_2d3e5c14c6c4cc::t_ed1efef222dfd3 1-5074
+ui/src/main.tsx
+  s_2d3e5c14c6c4cc::t_ba368879c26bd7 1-20
+ui/src/vite-env.d.ts
+  s_2d3e5c14c6c4cc::t_5356f9454eef6c 1
+ui/tsconfig.json
+  s_2d3e5c14c6c4cc::t_488473ce7e8105 1-21
+ui/tsconfig.node.json
+  s_2d3e5c14c6c4cc::t_be606dc7c2b6a9 1-9
+ui/vite.config.ts
+  s_2d3e5c14c6c4cc::t_fb666a0aa2f3b0 1-15
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.24",
+  "base_commit_sha": "08fd075a7787f6517a42228ad817f3a0b46f4e18",
+  "prompts": {},
+  "sessions": {
+    "s_2d3e5c14c6c4cc": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "2024c30f-06c7-490b-9391-3e60361c151e",
+        "model": "claude-fable-5"
+      },
+      "human_author": "Bert Berrevoets <bernardus.berrevoets@routevision.nl>"
+    }
+  }
+}
