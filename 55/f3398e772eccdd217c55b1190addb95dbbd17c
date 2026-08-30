@@ -1,0 +1,29 @@
+CHANGELOG.md
+  s_241f173b3ea312::t_b56e245670121f 13-30,43-44
+.markdownlint.json
+  s_241f173b3ea312::t_23580e02b5c23f 1-2,11
+  s_241f173b3ea312::t_9e3379b175ad86 3-10
+Dockerfile
+  s_241f173b3ea312::t_b56e245670121f 16-17,22,24
+.gitignore
+  s_241f173b3ea312::t_23580e02b5c23f 3
+README.md
+  s_241f173b3ea312::t_9e3379b175ad86 15-16
+  s_241f173b3ea312::t_b56e245670121f 29-30,46-47,51-52,99-103
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.0",
+  "base_commit_sha": "55f3398e772eccdd217c55b1190addb95dbbd17c",
+  "prompts": {},
+  "sessions": {
+    "s_241f173b3ea312": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "adb6aa44-6146-4292-b4ef-c70468713b21",
+        "model": "claude-fable-5"
+      },
+      "human_author": "B.N. Berrevoets <bert@berrevoets.net>"
+    }
+  }
+}
