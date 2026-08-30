@@ -13,13 +13,15 @@ RUN npm run build
 FROM scratch
 # TODO: submit to the Docker Extensions Marketplace (https://www.docker.com/products/extensions/submissions/)
 #   when ready; keep docs/screenshot.png and the hosted label URLs below in sync when the UI changes.
+#   docs/screenshot.png lives in Git LFS, so the screenshot label must use media.githubusercontent.com
+#   (raw.githubusercontent.com would serve the LFS pointer file instead of the image).
 LABEL org.opencontainers.image.title="Seq Cleanup" \
     org.opencontainers.image.description="Finds your Seq containers and, with one click, stops them, removes the Stream directory from their data volume, and restarts them." \
     org.opencontainers.image.vendor="Berrevoets Systems" \
     com.docker.desktop.extension.api.version="0.4.2" \
-    com.docker.extension.screenshots="[{\"alt\":\"Seq Cleanup in Docker Desktop\",\"url\":\"https://raw.githubusercontent.com/bberrevoets/seqcleanup-extension/main/docs/screenshot.png\"}]" \
+    com.docker.extension.screenshots="[{\"alt\":\"Seq Cleanup in Docker Desktop\",\"url\":\"https://media.githubusercontent.com/media/bberrevoets/seqcleanup-extension/main/docs/screenshot.png\"}]" \
     com.docker.desktop.extension.icon="https://raw.githubusercontent.com/bberrevoets/seqcleanup-extension/main/docker.svg" \
-    com.docker.extension.detailed-description="<h1>Seq Cleanup</h1><p>One button to wipe your local Seq instance clean.</p><h2>What it does</h2><ul><li>Finds the containers using the <code>seq-data</code> volume.</li><li>Stops the ones that are running.</li><li>Deletes the <code>Stream</code> directory (all logged events) from the volume.</li><li>Restarts the containers it stopped.</li></ul><p>A confirmation dialog guards against accidental clicks, and a progress log shows each step.</p>" \
+    com.docker.extension.detailed-description="<h1>Seq Cleanup</h1><p>One button to wipe your local Seq instance clean.</p><h2>What it does</h2><ul><li>Finds the containers running a <code>datalust/seq</code> image and the data volume each mounts at <code>/data</code>; asks which instance to clean when several are found.</li><li>Stops the ones that are running.</li><li>Deletes the <code>Stream</code> directory (all logged events) from the volume.</li><li>Restarts the containers it stopped.</li></ul><p>A confirmation dialog guards against accidental clicks, and a progress log shows each step.</p>" \
     com.docker.extension.publisher-url="https://github.com/bberrevoets/seqcleanup-extension" \
     com.docker.extension.additional-urls="[{\"title\":\"Source code\",\"url\":\"https://github.com/bberrevoets/seqcleanup-extension\"},{\"title\":\"Issue tracker\",\"url\":\"https://github.com/bberrevoets/seqcleanup-extension/issues\"}]" \
     com.docker.extension.categories="volumes,utility-tools" \
