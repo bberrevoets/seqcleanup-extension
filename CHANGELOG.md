@@ -10,6 +10,24 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+### Changed
+
+Author: *Bernardus Berrevoets*
+
+- Bumped `vite` 3 → 8 and `@vitejs/plugin-react` 2 → 6 in `ui/` (Dependabot, PR #1). The build output is unchanged.
+- Binary assets (`*.png`, `*.jpg`, `*.jpeg`, `*.zip`, `*.pdf`, `*.step`, `*.3mf`, `*.stl`) are now stored in Git LFS;
+  the history was rewritten to migrate `docs/screenshot.png`.
+- The marketplace screenshot label now points at `media.githubusercontent.com`, which serves LFS-backed files
+  (`raw.githubusercontent.com` returns the LFS pointer instead of the image).
+- Added `.markdownlint.json` (180-character line limit) and ignored `*.code-workspace` files.
+
+### Fixed
+
+Author: *Bernardus Berrevoets*
+
+- The extension detail description (Dockerfile label) and this changelog no longer describe a hardcoded `seq-data` volume;
+  they now match the image-based discovery that shipped in 1.0.0.
+
 ## 2026-08-27 — First public release (1.0.0)
 
 > Author: Bernardus Berrevoets
@@ -22,7 +40,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 - Custom extension icon (`docker.svg`): navy badge with a broom sweeping log lines, replacing the default Docker whale icon.
   Used both as the sidebar tab icon (`metadata.json`) and, embedded as a base64 data URI in the `com.docker.desktop.extension.icon` label, as the Manage-extensions card icon.
-- Cleanup button that stops the containers using the `seq-data` volume, removes the `Stream` directory from the volume root, and restarts the containers that were running.
+- Cleanup button that stops the containers using the selected Seq data volume, removes the `Stream` directory from the volume root,
+  and restarts the containers that were running.
 - Confirmation dialog before deletion and a step-by-step progress log in the extension UI.
 - Changelog content in the `com.docker.extension.changelog` Dockerfile label, shown in Docker Desktop's extension detail dialog.
 - Marketplace metadata labels: detailed description (Details tab) and categories (`volumes,utility-tools`).

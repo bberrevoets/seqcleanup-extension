@@ -12,7 +12,8 @@ When clicked, the extension:
 
 The image match (`datalust/seq`), data mount point (`/data`), and directory name (`Stream`) are constants at the top of [ui/src/App.tsx](ui/src/App.tsx).
 
-This is a UI-only extension: a React frontend built with MUI and Docker's theme, driving the Docker CLI through the extension API (`ddClient.docker.cli.exec`). There is no backend container.
+This is a UI-only extension: a React frontend built with MUI and Docker's theme, driving the Docker CLI through the extension API
+(`ddClient.docker.cli.exec`). There is no backend container.
 
 ## Installation
 
@@ -25,7 +26,8 @@ extensions under **Settings → Extensions → Allow only extensions distributed
 
 ## Local development
 
-You can use `docker` to build, install and push your extension. Also, we provide an opinionated [Makefile](Makefile) that could be convenient for you. There isn't a strong preference of using one over the other, so just use the one you're most comfortable with.
+You can use `docker` to build, install and push your extension. Also, we provide an opinionated [Makefile](Makefile) that could be convenient for you.
+There isn't a strong preference of using one over the other, so just use the one you're most comfortable with.
 
 To build the extension, use `make build-extension` **or**:
 
@@ -41,11 +43,13 @@ To install the extension, use `make install-extension` **or**:
 
 > If you want to automate this command, use the `-f` or `--force` flag to accept the warning message.
 
-To preview the extension in Docker Desktop, open Docker Dashboard once the installation is complete. The left-hand menu displays a new tab with the name of your extension. You can also use `docker extension ls` to see that the extension has been installed successfully.
+To preview the extension in Docker Desktop, open Docker Dashboard once the installation is complete. The left-hand menu displays a new tab with the name
+of your extension. You can also use `docker extension ls` to see that the extension has been installed successfully.
 
 ### Frontend development
 
-During the development of the frontend part, it's helpful to use hot reloading to test your changes without rebuilding your entire extension. To do this, you can configure Docker Desktop to load your UI from a development server.
+During the development of the frontend part, it's helpful to use hot reloading to test your changes without rebuilding your entire extension.
+To do this, you can configure Docker Desktop to load your UI from a development server.
 Assuming your app runs on the default port, start your UI app and then run:
 
 ```shell
@@ -92,7 +96,8 @@ docker extension rm bberrevoets/seqcleanup-extension:latest
 
 ## What's next?
 
-- To learn more about how to build your extension refer to the Extension SDK docs at https://docs.docker.com/desktop/extensions-sdk/.
-- To publish your extension in the Marketplace visit https://www.docker.com/products/extensions/submissions/.
-- To report issues and feedback visit https://github.com/docker/extensions-sdk/issues.
-- To look for other ideas of new extensions, or propose new ideas of extensions you would like to see, visit https://github.com/docker/extension-ideas/discussions.
+- To learn more about how to build your extension refer to the [Extension SDK docs](https://docs.docker.com/desktop/extensions-sdk/).
+- To publish your extension in the Marketplace visit the [Docker Extensions submission page](https://www.docker.com/products/extensions/submissions/).
+- To report issues and feedback visit the [Extension SDK issue tracker](https://github.com/docker/extensions-sdk/issues).
+- To look for other ideas of new extensions, or propose new ideas of extensions you would like to see,
+  visit the [extension ideas discussions](https://github.com/docker/extension-ideas/discussions).
