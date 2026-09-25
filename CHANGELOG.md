@@ -22,7 +22,7 @@ Author: *Bernardus Berrevoets*
   the history was rewritten to migrate `docs/screenshot.png`.
 - The marketplace screenshot label now points at `media.githubusercontent.com`, which serves LFS-backed files
   (`raw.githubusercontent.com` returns the LFS pointer instead of the image).
-- Added `.markdownlint.json` (180-character line limit) and ignored `*.code-workspace` files.
+- Added `.markdownlint.json` (180-character line limit) and ignored `*.code-workspace` files and the local `.claude/` directory.
 
 ### Fixed
 
