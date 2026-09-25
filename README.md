@@ -18,7 +18,7 @@ This is a UI-only extension: a React frontend built with MUI and Docker's theme,
 ## Installation
 
 ```shell
-docker extension install bberrevoets/seqcleanup-extension:1.0.0
+docker extension install bberrevoets/seqcleanup-extension:1.0.1
 ```
 
 Requires Docker Desktop 4.8.0 or later. If Docker Desktop refuses the install, allow non-Marketplace

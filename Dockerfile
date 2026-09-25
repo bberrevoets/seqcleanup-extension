@@ -25,7 +25,7 @@ LABEL org.opencontainers.image.title="Seq Cleanup" \
     com.docker.extension.publisher-url="https://github.com/bberrevoets/seqcleanup-extension" \
     com.docker.extension.additional-urls="[{\"title\":\"Source code\",\"url\":\"https://github.com/bberrevoets/seqcleanup-extension\"},{\"title\":\"Issue tracker\",\"url\":\"https://github.com/bberrevoets/seqcleanup-extension/issues\"}]" \
     com.docker.extension.categories="volumes,utility-tools" \
-    com.docker.extension.changelog="<ul><li>One-click cleanup: discovers Seq containers, stops the ones using the selected data volume, removes the <code>Stream</code> directory, and restarts them.</li><li>Instance picker when several Seq containers are found; bind-mounted data directories supported.</li><li>Confirmation dialog before deletion and a step-by-step progress log.</li><li>Custom extension icon.</li></ul>"
+    com.docker.extension.changelog="<h3>1.0.1</h3><ul><li>Fixed the Marketplace screenshot, which no longer loaded after the repository moved images to Git LFS.</li><li>The extension details now describe how Seq instances are found (by the <code>datalust/seq</code> image, with an instance picker) instead of a fixed <code>seq-data</code> volume.</li><li>Updated the UI build tooling (Vite 8); the cleanup itself is unchanged.</li></ul><h3>1.0.0</h3><ul><li>One-click cleanup: discovers Seq containers, stops the ones using the selected data volume, removes the <code>Stream</code> directory, and restarts them.</li><li>Instance picker when several Seq containers are found; bind-mounted data directories supported.</li><li>Confirmation dialog before deletion and a step-by-step progress log.</li><li>Custom extension icon.</li></ul>"
 
 COPY metadata.json .
 COPY docker.svg .
