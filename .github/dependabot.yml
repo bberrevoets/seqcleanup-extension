@@ -1,0 +1,28 @@
+version: 2
+updates:
+  - package-ecosystem: npm
+    directory: /ui
+    schedule:
+      interval: weekly
+    groups:
+      # One PR per week for all non-breaking updates.
+      minor-and-patch:
+        update-types: [minor, patch]
+    ignore:
+      # @docker/docker-mui-theme 0.0.13 peers on react ^17 || ^18 and @mui/material >=5 <=6.
+      # Lift these once Docker ships a theme that supports React 19 and MUI 7+.
+      - dependency-name: react
+        update-types: [version-update:semver-major]
+      - dependency-name: react-dom
+        update-types: [version-update:semver-major]
+      - dependency-name: "@types/react"
+        update-types: [version-update:semver-major]
+      - dependency-name: "@types/react-dom"
+        update-types: [version-update:semver-major]
+      - dependency-name: "@mui/material"
+        update-types: [version-update:semver-major]
+
+  - package-ecosystem: docker
+    directory: /
+    schedule:
+      interval: weekly

@@ -6,16 +6,34 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## Attributors
 
-- **Bernardus Berrevoets** — Author (2026-08-27)
+- **Bert Berrevoets** — Author (2026-08-27)
 - **Dependabot** — Dependency updates (PR #1, 2026-08-27)
 
 ## [Unreleased]
+
+### Added
+
+Author: *Bert Berrevoets*
+
+- `.github/dependabot.yml`: weekly npm updates for `ui/` (minor and patch grouped into one PR) and weekly updates for the Dockerfile base image.
+  Major updates of `react`, `react-dom`, `@types/react`, `@types/react-dom` and `@mui/material` are ignored until `@docker/docker-mui-theme` supports them.
+
+### Changed
+
+Author: *Bert Berrevoets*
+
+- Upgraded `typescript` 4.9 → 7.0 (the native compiler). `tsconfig.json` and `tsconfig.node.json` now use `moduleResolution: "Bundler"`
+  and no longer set `esModuleInterop`/`allowSyntheticDefaultImports`, which TypeScript 7 removed. The build output is unchanged.
+- Bumped `@types/node` 18 → 24 to match the `node:24-alpine` build image. This also resolves a peer-dependency conflict with Vite 8,
+  which requires `@types/node` 20.19 or later, so a fresh `npm install` works again.
+- React stays on 18.3 and MUI on 6.5: `@docker/docker-mui-theme` 0.0.13, the latest release, only supports `react` 17–18 and `@mui/material` 5–6.
+- Author name in this changelog is now Bert Berrevoets, and the 1.0.0 section lists the author under each section heading.
 
 ## 2026-09-26 — Maintenance release (1.0.1)
 
 ### Changed
 
-Author: *Bernardus Berrevoets*
+Author: *Bert Berrevoets*
 
 - Bumped `vite` 3 → 8 and `@vitejs/plugin-react` 2 → 6 in `ui/` (Dependabot, PR #1). The build output is unchanged.
 - Binary assets (`*.png`, `*.jpg`, `*.jpeg`, `*.zip`, `*.pdf`, `*.step`, `*.3mf`, `*.stl`) are now stored in Git LFS;
@@ -26,16 +44,16 @@ Author: *Bernardus Berrevoets*
 
 ### Fixed
 
-Author: *Bernardus Berrevoets*
+Author: *Bert Berrevoets*
 
 - The extension detail description (Dockerfile label) and this changelog no longer describe a hardcoded `seq-data` volume;
   they now match the image-based discovery that shipped in 1.0.0.
 
 ## 2026-08-27 — First public release (1.0.0)
 
-> Author: Bernardus Berrevoets
-
 ### Added
+
+Author: *Bert Berrevoets*
 
 - Published the extension image to Docker Hub as `bberrevoets/seqcleanup-extension:1.0.0` (multi-arch: amd64 + arm64).
 - Published the source at <https://github.com/bberrevoets/seqcleanup-extension>; the marketplace labels (icon,
@@ -52,6 +70,8 @@ Author: *Bernardus Berrevoets*
 
 ### Changed
 
+Author: *Bert Berrevoets*
+
 - `make push-extension` now passes `--provenance=false --sbom=false`, so the pushed manifest list contains only the
   real platforms (no `unknown/unknown` attestation entries).
 - The volume is no longer hardcoded: the extension discovers Seq containers by image (`datalust/seq`), reads the
@@ -62,5 +82,7 @@ Author: *Bernardus Berrevoets*
 - Rewrote `README.md` to describe the actual extension instead of the `docker extension init` template.
 
 ### Fixed
+
+Author: *Bert Berrevoets*
 
 - Corrected the extension title from "Seq Cleaneup" to "Seq Cleanup" in `metadata.json` and the `Dockerfile` labels.

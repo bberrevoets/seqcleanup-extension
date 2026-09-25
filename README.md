@@ -46,6 +46,11 @@ To install the extension, use `make install-extension` **or**:
 To preview the extension in Docker Desktop, open Docker Dashboard once the installation is complete. The left-hand menu displays a new tab with the name
 of your extension. You can also use `docker extension ls` to see that the extension has been installed successfully.
 
+### Dependency constraints
+
+The UI uses Docker's MUI theme (`@docker/docker-mui-theme`). Its latest release supports only React 17–18 and MUI 5–6,
+so React and `@mui/material` stay on those majors until Docker ships a newer theme. Dependabot ignores their major updates for the same reason.
+
 ### Frontend development
 
 During the development of the frontend part, it's helpful to use hot reloading to test your changes without rebuilding your entire extension.
