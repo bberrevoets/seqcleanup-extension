@@ -4,11 +4,14 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
-## Contributors
+## Attributors
 
 - **Bernardus Berrevoets** — Author (2026-08-27)
+- **Dependabot** — Dependency updates (PR #1, 2026-08-27)
 
 ## [Unreleased]
+
+## 2026-09-26 — Maintenance release (1.0.1)
 
 ### Changed
 
@@ -19,7 +22,7 @@ Author: *Bernardus Berrevoets*
   the history was rewritten to migrate `docs/screenshot.png`.
 - The marketplace screenshot label now points at `media.githubusercontent.com`, which serves LFS-backed files
   (`raw.githubusercontent.com` returns the LFS pointer instead of the image).
-- Added `.markdownlint.json` (180-character line limit) and ignored `*.code-workspace` files.
+- Added `.markdownlint.json` (180-character line limit) and ignored `*.code-workspace` files and the local `.claude/` directory.
 
 ### Fixed
 
