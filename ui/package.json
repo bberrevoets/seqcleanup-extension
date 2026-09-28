@@ -15,7 +15,7 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
-    "test": "jest src"
+    "test": "jest src --passWithNoTests"
   },
   "devDependencies": {
     "@docker/extension-api-client-types": "0.4.2",

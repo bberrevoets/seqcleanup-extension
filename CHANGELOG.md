@@ -17,6 +17,10 @@ Author: *Bert Berrevoets*
 
 - `.github/dependabot.yml`: weekly npm updates for `ui/` (minor and patch grouped into one PR) and weekly updates for the Dockerfile base image.
   Major updates of `react`, `react-dom`, `@types/react`, `@types/react-dom` and `@mui/material` are ignored until `@docker/docker-mui-theme` supports them.
+- GitHub Actions CI ([.github/workflows/ci.yml](.github/workflows/ci.yml)) on pull requests and pushes to `main`, with three jobs:
+  `ui` (type-check, build and test), `docker` (multi-arch image build for `linux/amd64` and `linux/arm64`, without pushing) and `markdown` (markdownlint).
+  All three are required status checks on `main`.
+- Dependabot now also updates the GitHub Actions used by the workflow (weekly).
 
 ### Changed
 
@@ -32,6 +36,7 @@ Author: *Bert Berrevoets*
 - Bumped `vite` 8.2 → 8.3 and `@vitejs/plugin-react` 6.1.0 → 6.1.1 (Dependabot, PR #6).
 - Bumped `jest` and `@types/jest` 29 → 30 (Dependabot, PR #8). The repository has no tests yet, so this only affects `npm test`.
 - The build output of these Dependabot updates is unchanged.
+- `npm test` now runs `jest src --passWithNoTests`, so it passes while there are no tests and can serve as a CI gate.
 
 ## 2026-09-26 — Maintenance release (1.0.1)
 
