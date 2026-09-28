@@ -1,5 +1,7 @@
 # Seq Cleanup
 
+[![CI](https://github.com/bberrevoets/seqcleanup-extension/actions/workflows/ci.yml/badge.svg)](https://github.com/bberrevoets/seqcleanup-extension/actions/workflows/ci.yml)
+
 A Docker Desktop extension that removes all [Seq](https://datalust.co/seq) event data with one button.
 
 When clicked, the extension:
@@ -50,6 +52,16 @@ of your extension. You can also use `docker extension ls` to see that the extens
 
 The UI uses Docker's MUI theme (`@docker/docker-mui-theme`). Its latest release supports only React 17–18 and MUI 5–6,
 so React and `@mui/material` stay on those majors until Docker ships a newer theme. Dependabot ignores their major updates for the same reason.
+
+### Continuous integration
+
+[.github/workflows/ci.yml](.github/workflows/ci.yml) runs on every pull request to `main` and every push to `main`. It has three jobs, all required before a PR can merge:
+
+- `ui`: `npm ci`, a type-check of `vite.config.ts`, `npm run build` (which type-checks `src/`) and `npm test`, on the same Node major as the Dockerfile.
+- `docker`: builds the image for `linux/amd64` and `linux/arm64`, the same way `make push-extension` does, but without pushing.
+- `markdown`: runs markdownlint with [.markdownlint.json](.markdownlint.json).
+
+Nothing is published. Releases are still pushed with `make push-extension`.
 
 ### Frontend development
 
