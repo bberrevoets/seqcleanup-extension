@@ -21,6 +21,8 @@ Author: *Bert Berrevoets*
   `ui` (type-check, build and test), `docker` (multi-arch image build for `linux/amd64` and `linux/arm64`, without pushing) and `markdown` (markdownlint).
   All three are required status checks on `main`.
 - Dependabot now also updates the GitHub Actions used by the workflow (weekly).
+- [AGENTS.md](AGENTS.md) with instructions for AI coding agents: architecture, commands, dependency and CI constraints, release steps and conventions.
+  [CLAUDE.md](CLAUDE.md) imports it, so both Codex and Claude Code read the same file.
 
 ### Changed
 
@@ -39,6 +41,13 @@ Author: *Bert Berrevoets*
 - Bumped `vite` 8.3.0 → 8.3.1 (Dependabot, PR #11), the first Dependabot PR gated by CI. It also moves the bundler `rolldown` 1.2.6 → 1.2.11,
   so the UI bundle is slightly different (304.50 → 304.48 kB, new asset hash). The type-check, UI build and multi-arch image build all pass in CI.
 - `npm test` now runs `jest src --passWithNoTests`, so it passes while there are no tests and can serve as a CI gate.
+
+### Fixed
+
+Author: *Bert Berrevoets*
+
+- The Makefile help for `push-extension` now shows `TAG=0.1` instead of `tag=0.1`. Make variables are case-sensitive, so the lowercase form
+  left `TAG` at `latest`, and the push was skipped because that tag already exists.
 
 ## 2026-09-26 — Maintenance release (1.0.1)
 

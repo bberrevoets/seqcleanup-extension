@@ -31,6 +31,8 @@ extensions under **Settings → Extensions → Allow only extensions distributed
 You can use `docker` to build, install and push your extension. Also, we provide an opinionated [Makefile](Makefile) that could be convenient for you.
 There isn't a strong preference of using one over the other, so just use the one you're most comfortable with.
 
+AI coding agents: see [AGENTS.md](AGENTS.md) for the constraints and conventions to follow ([CLAUDE.md](CLAUDE.md) imports it).
+
 To build the extension, use `make build-extension` **or**:
 
 ```shell
