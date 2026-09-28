@@ -21,6 +21,8 @@ Author: *Bert Berrevoets*
   `ui` (type-check, build and test), `docker` (multi-arch image build for `linux/amd64` and `linux/arm64`, without pushing) and `markdown` (markdownlint).
   All three are required status checks on `main`.
 - Dependabot now also updates the GitHub Actions used by the workflow (weekly).
+- [AGENTS.md](AGENTS.md) with instructions for AI coding agents: architecture, commands, dependency and CI constraints, release steps and conventions.
+  [CLAUDE.md](CLAUDE.md) imports it, so both Codex and Claude Code read the same file.
 
 ### Changed
 
