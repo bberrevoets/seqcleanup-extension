@@ -7,7 +7,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 ## Attributors
 
 - **Bert Berrevoets** — Author (2026-08-27)
-- **Dependabot** — Dependency updates (PR #1, 2026-08-27)
+- **Dependabot** — Dependency updates (PRs #1, #5–#8, 2026-08-27)
 
 ## [Unreleased]
 
@@ -28,6 +28,10 @@ Author: *Bert Berrevoets*
   which requires `@types/node` 20.19 or later, so a fresh `npm install` works again.
 - React stays on 18.3 and MUI on 6.5: `@docker/docker-mui-theme` 0.0.13, the latest release, only supports `react` 17–18 and `@mui/material` 5–6.
 - Author name in this changelog is now Bert Berrevoets, and the 1.0.0 section lists the author under each section heading.
+- Bumped the Dockerfile build image `node:24-alpine` → `node:26-alpine` and `@types/node` 24 → 26 to match (Dependabot, PRs #5 and #7).
+- Bumped `vite` 8.2 → 8.3 and `@vitejs/plugin-react` 6.1.0 → 6.1.1 (Dependabot, PR #6).
+- Bumped `jest` and `@types/jest` 29 → 30 (Dependabot, PR #8). The repository has no tests yet, so this only affects `npm test`.
+- The build output of these Dependabot updates is unchanged.
 
 ## 2026-09-26 — Maintenance release (1.0.1)
 
