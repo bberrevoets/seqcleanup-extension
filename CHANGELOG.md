@@ -42,6 +42,13 @@ Author: *Bert Berrevoets*
   so the UI bundle is slightly different (304.50 → 304.48 kB, new asset hash). The type-check, UI build and multi-arch image build all pass in CI.
 - `npm test` now runs `jest src --passWithNoTests`, so it passes while there are no tests and can serve as a CI gate.
 
+### Fixed
+
+Author: *Bert Berrevoets*
+
+- The Makefile help for `push-extension` now shows `TAG=0.1` instead of `tag=0.1`. Make variables are case-sensitive, so the lowercase form
+  left `TAG` at `latest`, and the push was skipped because that tag already exists.
+
 ## 2026-09-26 — Maintenance release (1.0.1)
 
 ### Changed
