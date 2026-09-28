@@ -1,0 +1,30 @@
+ui/package.json
+  s_2023beeffeb1e0::t_2e16a3c060b16a 18
+README.md
+  s_2023beeffeb1e0::t_bfd58f939d4e20 3-4,56-64
+  s_2023beeffeb1e0::t_dd6666dc882802 65
+CHANGELOG.md
+  s_2023beeffeb1e0::t_bfd58f939d4e20 20-23,39
+.github/dependabot.yml
+  s_2023beeffeb1e0::t_2e16a3c060b16a 30
+  s_2023beeffeb1e0::t_bc4baf0002cc4d 29,31-33
+.github/workflows/ci.yml
+  s_2023beeffeb1e0::t_eee385a8d225e6 1-31,35-63
+  s_2023beeffeb1e0::t_267bdbc7bbdabc 32-34
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "cd8f439ea2f6234f459c3d54d18a6186fc919663",
+  "prompts": {},
+  "sessions": {
+    "s_2023beeffeb1e0": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "0f55e334-b358-47ee-86f8-4fcbcf53fb38",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "B.N. Berrevoets <bert@berrevoets.net>"
+    }
+  }
+}
