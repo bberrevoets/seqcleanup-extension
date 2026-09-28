@@ -1,0 +1,21 @@
+Makefile
+  s_6717f4d72fe5de::t_7f914a4d3ad0d7 21
+CHANGELOG.md
+  s_6717f4d72fe5de::t_16661e714344d4 45-51
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "015506695c39d03eff01ec25045aa9d598069642",
+  "prompts": {},
+  "sessions": {
+    "s_6717f4d72fe5de": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "8ddfc9e6-c6e2-479d-b6f1-506d28ba13fe",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "B.N. Berrevoets <bert@berrevoets.net>"
+    }
+  }
+}
