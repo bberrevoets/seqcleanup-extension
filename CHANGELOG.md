@@ -7,7 +7,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 ## Attributors
 
 - **Bert Berrevoets** — Author (2026-08-27)
-- **Dependabot** — Dependency updates (PRs #1, #5–#8, #11, 2026-08-27)
+- **Dependabot** — Dependency updates (PRs #1, #5–#8, #11, #14, 2026-08-27)
 
 ## [Unreleased]
 
@@ -40,6 +40,7 @@ Author: *Bert Berrevoets*
 - The build output of these Dependabot updates is unchanged.
 - Bumped `vite` 8.3.0 → 8.3.1 (Dependabot, PR #11), the first Dependabot PR gated by CI. It also moves the bundler `rolldown` 1.2.6 → 1.2.11,
   so the UI bundle is slightly different (304.50 → 304.48 kB, new asset hash). The type-check, UI build and multi-arch image build all pass in CI.
+- Bumped `@types/node` 26.6.2 → 26.6.3 (Dependabot, PR #14). Type definitions only, so the build output is unchanged; the Node major stays at 26.
 - `npm test` now runs `jest src --passWithNoTests`, so it passes while there are no tests and can serve as a CI gate.
 
 ### Fixed
