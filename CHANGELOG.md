@@ -7,7 +7,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 ## Attributors
 
 - **Bert Berrevoets** — Author (2026-08-27)
-- **Dependabot** — Dependency updates (PRs #1, #5–#8, #11, #14, 2026-08-27)
+- **Dependabot** — Dependency updates (PRs #1, #5–#8, #11, #14, #16, #17, 2026-08-27)
 
 ## [Unreleased]
 
@@ -41,6 +41,8 @@ Author: *Bert Berrevoets*
 - Bumped `vite` 8.3.0 → 8.3.1 (Dependabot, PR #11), the first Dependabot PR gated by CI. It also moves the bundler `rolldown` 1.2.6 → 1.2.11,
   so the UI bundle is slightly different (304.50 → 304.48 kB, new asset hash). The type-check, UI build and multi-arch image build all pass in CI.
 - Bumped `@types/node` 26.6.2 → 26.6.3 (Dependabot, PR #14). Type definitions only, so the build output is unchanged; the Node major stays at 26.
+- Bumped `vite` 8.3.1 → 8.3.2 and `@types/node` 26.6.3 → 26.6.4 (Dependabot, PR #16). Patch releases with no other lockfile changes;
+  the type-check, UI build and multi-arch image build pass in CI, and the Node major stays at 26.
 - `npm test` now runs `jest src --passWithNoTests`, so it passes while there are no tests and can serve as a CI gate.
 
 ### Fixed
@@ -49,6 +51,13 @@ Author: *Bert Berrevoets*
 
 - The Makefile help for `push-extension` now shows `TAG=0.1` instead of `tag=0.1`. Make variables are case-sensitive, so the lowercase form
   left `TAG` at `latest`, and the push was skipped because that tag already exists.
+
+### Security
+
+Author: *Bert Berrevoets*
+
+- Bumped `source-map-js` 1.2.1 → 1.2.2 (Dependabot, PR #17), fixing a high-severity denial of service from malicious indexed source maps
+  (CVE-2026-93749). It is a transitive build-time dependency, so only the lockfile changes; the UI build and image build pass in CI.
 
 ## 2026-09-26 — Maintenance release (1.0.1)
 
