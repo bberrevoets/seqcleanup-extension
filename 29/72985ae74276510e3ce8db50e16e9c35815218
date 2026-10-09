@@ -1,0 +1,19 @@
+CHANGELOG.md
+  s_d038f4c1595619::t_36cca2546ab3f1 10,44-45
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "2972985ae74276510e3ce8db50e16e9c35815218",
+  "prompts": {},
+  "sessions": {
+    "s_d038f4c1595619": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "41283560-f8d1-4df8-adf7-8886f7a54b45",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "B.N. Berrevoets <bert@berrevoets.net>"
+    }
+  }
+}
