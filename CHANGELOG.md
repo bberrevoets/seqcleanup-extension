@@ -7,7 +7,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 ## Attributors
 
 - **Bert Berrevoets** — Author (2026-08-27)
-- **Dependabot** — Dependency updates (PRs #1, #5–#8, #11, #14, #16, #17, 2026-08-27)
+- **Dependabot** — Dependency updates (PRs #1, #5–#8, #11, #14, #16, #17, #20, #21, 2026-08-27)
 
 ## [Unreleased]
 
@@ -43,6 +43,8 @@ Author: *Bert Berrevoets*
 - Bumped `@types/node` 26.6.2 → 26.6.3 (Dependabot, PR #14). Type definitions only, so the build output is unchanged; the Node major stays at 26.
 - Bumped `vite` 8.3.1 → 8.3.2 and `@types/node` 26.6.3 → 26.6.4 (Dependabot, PR #16). Patch releases with no other lockfile changes;
   the type-check, UI build and multi-arch image build pass in CI, and the Node major stays at 26.
+- Bumped `@types/node` 26.6.4 → 26.6.5 and `@vitejs/plugin-react` 6.1.1 → 6.1.2 (Dependabot, PR #21). It replaces group PR #19,
+  whose `vite` 8.3.4 was already overtaken by the security update in PR #20. The build output is unchanged; the Node major stays at 26.
 - `npm test` now runs `jest src --passWithNoTests`, so it passes while there are no tests and can serve as a CI gate.
 
 ### Fixed
@@ -58,6 +60,11 @@ Author: *Bert Berrevoets*
 
 - Bumped `source-map-js` 1.2.1 → 1.2.2 (Dependabot, PR #17), fixing a high-severity denial of service from malicious indexed source maps
   (CVE-2026-93749). It is a transitive build-time dependency, so only the lockfile changes; the UI build and image build pass in CI.
+- Bumped `vite` 8.3.2 → 8.3.5 (Dependabot security update, PR #20), fixing three flaws in the `launch-editor` code that Vite's dev server
+  uses to open files in an editor: a Windows `fs.existsSync()` check bypass (high, CVE-2026-112942), editor CLI flag misinterpretation
+  that allows arbitrary commands (medium, CVE-2026-112944) and missing `%` escaping on Windows (medium, CVE-2026-112943).
+  Only the dev server is affected; the extension's UI bundle never contained this code. The bump also moves `rolldown` 1.2.11 → 1.2.14,
+  so the UI bundle is slightly different (304.48 → 304.45 kB, new asset hash). The type-check, UI build and multi-arch image build pass in CI.
 
 ## 2026-09-26 — Maintenance release (1.0.1)
 
