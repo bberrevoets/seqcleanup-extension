@@ -7,7 +7,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 ## Attributors
 
 - **Bert Berrevoets** — Author (2026-08-27)
-- **Dependabot** — Dependency updates (PRs #1, #5–#8, #11, #14, #16, #17, #20, #21, 2026-08-27)
+- **Dependabot** — Dependency updates (PRs #1, #5–#8, #11, #14, #16, #17, #20, #21, #23, 2026-08-27)
 
 ## [Unreleased]
 
@@ -45,6 +45,8 @@ Author: *Bert Berrevoets*
   the type-check, UI build and multi-arch image build pass in CI, and the Node major stays at 26.
 - Bumped `@types/node` 26.6.4 → 26.6.5 and `@vitejs/plugin-react` 6.1.1 → 6.1.2 (Dependabot, PR #21). It replaces group PR #19,
   whose `vite` 8.3.4 was already overtaken by the security update in PR #20. The build output is unchanged; the Node major stays at 26.
+- Bumped the CI action `DavidAnson/markdownlint-cli2-action` 24 → 25 (Dependabot, PR #23), which brings markdownlint-cli2 0.24.0
+  and markdownlint 0.42.0 with stricter checks for several rules. All Markdown files still pass; the extension itself is unaffected.
 - `npm test` now runs `jest src --passWithNoTests`, so it passes while there are no tests and can serve as a CI gate.
 
 ### Fixed
