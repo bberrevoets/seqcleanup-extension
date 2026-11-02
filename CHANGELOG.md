@@ -7,7 +7,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 ## Attributors
 
 - **Bert Berrevoets** — Author (2026-08-27)
-- **Dependabot** — Dependency updates (PRs #1, #5–#8, #11, #14, #16, #17, #20, #21, 2026-08-27)
+- **Dependabot** — Dependency updates (PRs #1, #5–#8, #11, #14, #16, #17, #20, #21, #23, 2026-08-27)
 
 ## [Unreleased]
 
@@ -45,7 +45,12 @@ Author: *Bert Berrevoets*
   the type-check, UI build and multi-arch image build pass in CI, and the Node major stays at 26.
 - Bumped `@types/node` 26.6.4 → 26.6.5 and `@vitejs/plugin-react` 6.1.1 → 6.1.2 (Dependabot, PR #21). It replaces group PR #19,
   whose `vite` 8.3.4 was already overtaken by the security update in PR #20. The build output is unchanged; the Node major stays at 26.
+- Bumped the CI action `DavidAnson/markdownlint-cli2-action` 24 → 25 (Dependabot, PR #23), which brings markdownlint-cli2 0.24.0
+  and markdownlint 0.42.0 with stricter checks for several rules. All Markdown files still pass; the extension itself is unaffected.
 - `npm test` now runs `jest src --passWithNoTests`, so it passes while there are no tests and can serve as a CI gate.
+- Replaced `jest` and `@types/jest` with Vitest 5, which reuses the Vite configuration and compiles TypeScript and JSX without extra setup.
+  `npm test` now runs `vitest run --dir src --passWithNoTests`, with the same scope and the same pass while there are no tests.
+  Tests import `test` and `expect` from `vitest`. The lockfile shrinks from 442 to 168 packages; the build output is unchanged.
 
 ### Fixed
 
@@ -65,6 +70,9 @@ Author: *Bert Berrevoets*
   that allows arbitrary commands (medium, CVE-2026-112944) and missing `%` escaping on Windows (medium, CVE-2026-112943).
   Only the dev server is affected; the extension's UI bundle never contained this code. The bump also moves `rolldown` 1.2.11 → 1.2.14,
   so the UI bundle is slightly different (304.48 → 304.45 kB, new asset hash). The type-check, UI build and multi-arch image build pass in CI.
+- Removing `jest` (see Changed) clears Dependabot alerts #20 (`deepmerge` prototype poisoning, low, CVE-2026-93753, no patched release),
+  #21 (`glob`, medium, CVE-2026-118773, auto-dismissed by GitHub) and #22 (`minimatch` denial of service, medium, CVE-2026-118764).
+  All three were development-only and came in through jest 30.5.2, its latest release, so no update could fix them.
 
 ## 2026-09-26 — Maintenance release (1.0.1)
 
