@@ -13,7 +13,7 @@ Guidance for AI coding agents (Codex, Claude Code, and others) working in this r
 ## Commands
 
 ```shell
-cd ui && npm ci && npm run build && npm test   # build type-checks src/; tests use --passWithNoTests (there are none yet)
+cd ui && npm ci && npm run build && npm test   # build type-checks src/; npm test runs Vitest on src/ with --passWithNoTests (no tests yet)
 npx tsc -p tsconfig.node.json --noEmit --composite false   # type-check vite.config.ts (from ui/; not `tsc -b`, which emits vite.config.js)
 make install-extension                          # build the image and install it in Docker Desktop
 make push-extension TAG=x.y.z                   # release: multi-arch build and push to Docker Hub

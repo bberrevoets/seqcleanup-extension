@@ -59,7 +59,7 @@ so React and `@mui/material` stay on those majors until Docker ships a newer the
 
 [.github/workflows/ci.yml](.github/workflows/ci.yml) runs on every pull request to `main` and every push to `main`. It has three jobs, all required before a PR can merge:
 
-- `ui`: `npm ci`, a type-check of `vite.config.ts`, `npm run build` (which type-checks `src/`) and `npm test`, on the same Node major as the Dockerfile.
+- `ui`: `npm ci`, a type-check of `vite.config.ts`, `npm run build` (which type-checks `src/`) and `npm test` (Vitest), on the same Node major as the Dockerfile.
 - `docker`: builds the image for `linux/amd64` and `linux/arm64`, the same way `make push-extension` does, but without pushing.
 - `markdown`: runs markdownlint with [.markdownlint.json](.markdownlint.json).
 
