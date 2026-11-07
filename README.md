@@ -120,3 +120,26 @@ docker extension rm bberrevoets/seqcleanup-extension:latest
 - To report issues and feedback visit the [Extension SDK issue tracker](https://github.com/docker/extensions-sdk/issues).
 - To look for other ideas of new extensions, or propose new ideas of extensions you would like to see,
   visit the [extension ideas discussions](https://github.com/docker/extension-ideas/discussions).
+
+## Conventions
+
+- **Branching:** GitHub Flow. `main` is protected and accepts changes only through pull requests.
+- **Markdown:** linted with `markdownlint-cli2`, 180 character limit.
+
+  ```sh
+  npx markdownlint-cli2 "**/*.md"
+  ```
+
+- **Binaries:** tracked with Git LFS; the covered types and any deliberate exceptions are listed in
+  [AGENTS.md](AGENTS.md). Run `git lfs install` once per machine before cloning; in a clone made without it, run
+  `git lfs install` and then `git lfs pull` to download the files.
+- **Agent instructions:** in [AGENTS.md](AGENTS.md), read by Claude Code, Codex and any other coding agent.
+  `CLAUDE.md` only imports it, so edit `AGENTS.md`.
+
+## License
+
+[MIT](LICENSE) -- Copyright (c) 2026 Bert Berrevoets, Berrevoets Systems.
+
+## Author
+
+Bert Berrevoets — Berrevoets Systems — <bert@berrevoets.net>

@@ -7,7 +7,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 ## Attributors
 
 - **Bert Berrevoets** — Author (2026-08-27)
-- **Dependabot** — Dependency updates (PRs #1, #5–#8, #11, #14, #16, #17, #20, #21, #23, 2026-08-27)
+- **Dependabot** — Dependency updates (PRs #1, #5–#8, #11, #14, #16, #17, #20, #21, #23, #25, 2026-08-27)
+- **Claude (Anthropic)** — Co-author (2026-08-27)
 
 ## [Unreleased]
 
@@ -23,6 +24,9 @@ Author: *Bert Berrevoets*
 - Dependabot now also updates the GitHub Actions used by the workflow (weekly).
 - [AGENTS.md](AGENTS.md) with instructions for AI coding agents: architecture, commands, dependency and CI constraints, release steps and conventions.
   [CLAUDE.md](CLAUDE.md) imports it, so both Codex and Claude Code read the same file.
+- [LICENSE](LICENSE): MIT. The repository was public without one, so by default nobody else could reuse the code.
+- [.markdownlint-cli2.jsonc](.markdownlint-cli2.jsonc): `npx markdownlint-cli2 "**/*.md"` now skips `ui/node_modules` locally too,
+  as CI already did.
 
 ### Changed
 
@@ -51,6 +55,10 @@ Author: *Bert Berrevoets*
 - Replaced `jest` and `@types/jest` with Vitest 5, which reuses the Vite configuration and compiles TypeScript and JSX without extra setup.
   `npm test` now runs `vitest run --dir src --passWithNoTests`, with the same scope and the same pass while there are no tests.
   Tests import `test` and `expect` from `vitest`. The lockfile shrinks from 442 to 168 packages; the build output is unchanged.
+- Bumped `@types/node` 26.6.5 → 26.6.6 (Dependabot, PR #25).
+- Brought the AI setup to the current standard: the repo-init blocks in `AGENTS.md`, `.gitignore` and `.gitattributes`, the
+  canonical `CLAUDE.md` stub, and Conventions, License and Author sections in the README. `AGENTS.md` gains a short Project
+  Overview and the Dependabot routine; its rules that the block now holds moved there. PRs are squash-merged from now on.
 
 ### Fixed
 
