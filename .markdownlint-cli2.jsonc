@@ -1,0 +1,4 @@
+{
+  // Keep ui/node_modules and build output out of the lint, locally as in CI.
+  "gitignore": true
+}
