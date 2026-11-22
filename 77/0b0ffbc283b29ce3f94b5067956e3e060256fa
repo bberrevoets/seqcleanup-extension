@@ -1,0 +1,20 @@
+CHANGELOG.md
+  s_29a7f5db9b3034::t_0f20552ffbc303 64-66
+  s_29a7f5db9b3034::t_5140cb3991d951 10
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "770b0ffbc283b29ce3f94b5067956e3e060256fa",
+  "prompts": {},
+  "sessions": {
+    "s_29a7f5db9b3034": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "1c8aca9b-cba2-4958-9948-fdc81fca956f",
+        "model": "claude-fable-5-2"
+      },
+      "human_author": "B.N. Berrevoets <bert@berrevoets.net>"
+    }
+  }
+}
