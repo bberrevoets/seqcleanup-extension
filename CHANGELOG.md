@@ -7,7 +7,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 ## Attributors
 
 - **Bert Berrevoets** — Author (2026-08-27)
-- **Dependabot** — Dependency updates (PRs #1, #5–#8, #11, #14, #16, #17, #20, #21, #23, #25, #27, 2026-08-27)
+- **Dependabot** — Dependency updates (PRs #1, #5–#8, #11, #14, #16, #17, #20, #21, #23, #25, #27, #29, 2026-08-27)
 - **Claude (Anthropic)** — Co-author (2026-08-27)
 
 ## [Unreleased]
@@ -61,6 +61,9 @@ Author: *Bert Berrevoets*
   Overview and the Dependabot routine; its rules that the block now holds moved there. PRs are squash-merged from now on.
 - Bumped `@vitejs/plugin-react` 6.1.2 → 6.3.0, `vite` 8.3.5 → 8.3.6 and `vitest` 5.0.5 → 5.1.0 (Dependabot, PR #27). Build and test
   tooling only, within the same majors. It also moves the bundler `rolldown` 1.2.14 → 1.2.16; the lockfile stays at 168 packages.
+- Bumped `vite` 8.3.6 → 8.3.8 (Dependabot, PR #29). Build tooling only; the release notes list no breaking changes and no security fixes.
+  It also moves the bundler `rolldown` 1.2.16 → 1.2.19, which adds an optional WebAssembly fallback binding (`@rolldown/binding-wasm32-wasi`)
+  and its helper packages, so the lockfile grows from 168 to 175 packages.
 
 ### Fixed
 
